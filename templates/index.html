@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fuel Predictor</title>
+</head>
+<body>
+
+    <h1>Fuel Consumption Predictor</h1>
+
+    <form action="/predict" method="POST">
+
+        <input name="engine" placeholder="Engine Size (L)" required><br><br>
+        <input name="cylinders" placeholder="Cylinders" required><br><br>
+        <input name="city" placeholder="City (L/100 km)" required><br><br>
+        <input name="highway" placeholder="Highway (L/100 km)" required><br><br>
+
+        <button type="submit">Predict</button>
+
+    </form>
+
+    {% if prediction %}
+        <h2>Predicted Fuel Consumption: {{ prediction }} L/100 km</h2>
+    {% endif %}
+
+</body>
+</html>
